@@ -3,7 +3,7 @@
 // Cargar header.html y marcar el enlace activo
 document.addEventListener('DOMContentLoaded', function() {
   // Header
-  fetch('../assets/header.html')
+  fetch('assets/header.html')
     .then(res => res.text())
     .then(html => {
       document.body.insertAdjacentHTML('afterbegin', html);
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
   // Footer
-  fetch('../assets/footer.html')
+  fetch('assets/footer.html')
     .then(res => res.text())
     .then(html => {
       document.body.insertAdjacentHTML('beforeend', html);
