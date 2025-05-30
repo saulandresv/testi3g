@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const path = window.location.pathname;
       const hash = window.location.hash;
       let navKey = '';
-      if (path.includes('/index/')) navKey = 'inicio';
-      else if (path.includes('/blog/')) navKey = 'blog';
-      else if (path.includes('/nosotros/')) navKey = 'nosotros';
+      if (path.endsWith('/index.html') || path === '/' || path === '/index.html') navKey = 'inicio';
+      else if (path.endsWith('/blog.html')) navKey = 'blog';
+      else if (path.endsWith('/nosotros.html')) navKey = 'nosotros';
       else if (hash === '#contacto') navKey = 'contacto';
       // Marcar contacto/inicio si se hace clic
       const navLinks = document.querySelectorAll('nav a[data-nav]');
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
               contacto.scrollIntoView({ behavior: 'smooth' });
               history.replaceState(null, '', '#contacto');
             } else {
-              // Si no existe la sección, solo marca el menú
-              navLinks.forEach(l => l.classList.remove('active'));
-              link.classList.add('active');
+              // Si no existe la sección, redirige a index.html con hash
+              e.preventDefault();
+              window.location.href = 'index.html#contacto';
             }
           });
         }
@@ -51,12 +51,37 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           });
         }
+        // Scroll suave a servicios
+        if (link.getAttribute('data-nav') === 'servicios') {
+          link.addEventListener('click', function(e) {
+            const servicios = document.getElementById('servicios');
+            if (servicios) {
+              e.preventDefault();
+              navLinks.forEach(l => l.classList.remove('active'));
+              link.classList.add('active');
+              servicios.scrollIntoView({ behavior: 'smooth' });
+              history.replaceState(null, '', '#servicios');
+            } else {
+              // Si no existe la sección, redirige a index.html con hash
+              e.preventDefault();
+              window.location.href = 'index.html#servicios';
+            }
+          });
+        }
       });
-      // Si el hash cambia a #contacto
+      // Si el hash cambia a #contacto o #servicios
       window.addEventListener('hashchange', function() {
         if (window.location.hash === '#contacto') {
+          const contacto = document.getElementById('contacto');
+          if (contacto) contacto.scrollIntoView({ behavior: 'smooth' });
           navLinks.forEach(l => l.classList.remove('active'));
           document.querySelector('nav a[data-nav="contacto"]').classList.add('active');
+        }
+        if (window.location.hash === '#servicios') {
+          const servicios = document.getElementById('servicios');
+          if (servicios) servicios.scrollIntoView({ behavior: 'smooth' });
+          navLinks.forEach(l => l.classList.remove('active'));
+          document.querySelector('nav a[data-nav="servicios"]').classList.add('active');
         }
       });
     });
