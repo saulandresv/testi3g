@@ -1,0 +1,1 @@
+// JS específico para la página de Nosotros (opcional) 

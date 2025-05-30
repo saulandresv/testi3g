@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | I3G Ciberseguridad</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <style>
+    .blog-main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      padding: 2rem 2rem 3rem 2rem;
+    }
+    .blog-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: #0d1b2a;
+      color: white;
+      border-radius: 12px 12px 0 0;
+      padding: 1.5rem 2rem;
+    }
+    .blog-header img {
+      height: 40px;
+    }
+    .blog-header nav {
+      flex: 1;
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-end;
+    }
+    .blog-header nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .blog-header nav a.active, .blog-header nav a:hover {
+      background: #19345c;
+    }
+    .blog-section-title {
+      font-size: 2rem;
+      margin: 2rem 0 1.5rem 0;
+      color: #0d1b2a;
+      font-weight: bold;
+    }
+    .blog-videos {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .blog-video-card {
+      flex: 1;
+      background: #11294d;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      min-width: 200px;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blog-video-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+    .blog-video-card .play-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: #e63946;
+      font-size: 2.5rem;
+      background: white;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .blog-video-card .play-btn:hover {
+      background: #e63946;
+      color: white;
+    }
+    .blog-content-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .blog-news {
+      flex: 2;
+      min-width: 300px;
+    }
+    .blog-news-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .blog-news-card .news-icon {
+      background: #e63946;
+      color: white;
+      border-radius: 8px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      flex-shrink: 0;
+    }
+    .blog-news-card .news-content {
+      flex: 1;
+    }
+    .blog-news-card .news-date {
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+    .blog-news-card .news-title {
+      font-weight: bold;
+      color: #0d1b2a;
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+    .blog-news-card .news-desc {
+      color: #333;
+      font-size: 0.98rem;
+    }
+    .blog-resources {
+      flex: 1;
+      min-width: 220px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      height: fit-content;
+    }
+    .blog-resources h3 {
+      color: #0d1b2a;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .blog-resources ul {
+      list-style: none;
+      padding: 0;
+    }
+    .blog-resources ul li {
+      margin-bottom: 1rem;
+      color: #19345c;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .blog-resources ul li i {
+      color: #e63946;
+      font-size: 1.1rem;
+    }
+    @media (max-width: 900px) {
+      .blog-videos, .blog-content-row {
+        flex-direction: column;
+      }
+      .blog-news, .blog-resources {
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- El header se carga dinámicamente -->
+  <div class="blog-main">
+    <div class="blog-section-title">Concienciación</div>
+    <div class="blog-videos">
+      <div class="blog-video-card">
+        <div class="video-responsive">
+          <iframe src="https://www.youtube.com/embed/-Ac2J35kreI" title="Concienciación 1" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="blog-video-card">
+        <div class="video-responsive">
+          <iframe src="https://www.youtube.com/embed/qPDX18N_i4Y" title="Concienciación 2" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="blog-video-card">
+        <div class="video-responsive">
+          <iframe src="https://www.youtube.com/embed/oge2MFZwFuk" title="Concienciación 3" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="blog-content-row">
+      <section class="blog-news">
+        <div class="blog-section-title" style="font-size:1.3rem; margin:0 0 1.2rem 0;">Noticias</div>
+        <div class="blog-news-card">
+          <div class="news-icon"><i class="fas fa-exclamation-triangle"></i></div>
+          <div class="news-content">
+            <div class="news-date">4 abr. 2024</div>
+            <div class="news-title">Nueva alerta de seguridad crítica</div>
+            <div class="news-desc">Se ha detectado una vulnerabilidad crítica en sistemas ampliamente utilizados. Actualiza tus sistemas cuanto antes.</div>
+          </div>
+        </div>
+        <div class="blog-news-card">
+          <div class="news-icon"><i class="fas fa-bug"></i></div>
+          <div class="news-content">
+            <div class="news-date">22 marz. 2024</div>
+            <div class="news-title">Informe sobre las últimas amenazas</div>
+            <div class="news-desc">Resumen de las amenazas más recientes y cómo protegerse de ellas en tu organización.</div>
+          </div>
+        </div>
+        <div class="blog-news-card">
+          <div class="news-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="news-content">
+            <div class="news-date">10 marz. 2024</div>
+            <div class="news-title">Incidente de seguridad resuelto</div>
+            <div class="news-desc">Caso de éxito: cómo se resolvió un incidente de seguridad en una empresa del sector financiero.</div>
+          </div>
+        </div>
+      </section>
+      <aside class="blog-resources">
+        <h3>Recursos Técnicos</h3>
+        <ul>
+          <li><i class="fas fa-file-alt"></i> Guía de mejores prácticas de seguridad</li>
+          <li><i class="fas fa-book"></i> Whitepaper de análisis de amenazas</li>
+          <li><i class="fas fa-cogs"></i> Documento técnico de configuración</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+  <!-- El footer se carga dinámicamente -->
+  <script src="../assets/js/global.js"></script>
+  <script src="blog.js"></script>
+</body>
+</html> 

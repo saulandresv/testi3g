@@ -1,0 +1,7 @@
+/* Estilos específicos para la página de inicio (index) */
+nav a.active {
+  color: #fff !important;
+  border-bottom: 3px solid #e63946;
+  font-weight: bold;
+  background: none !important;
+} 
