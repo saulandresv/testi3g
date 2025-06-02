@@ -84,6 +84,34 @@ document.addEventListener('DOMContentLoaded', function() {
           document.querySelector('nav a[data-nav="servicios"]').classList.add('active');
         }
       });
+      // Lógica menú hamburguesa (debe ir aquí para que funcione tras cargar el header)
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('main-nav');
+      const overlay = document.querySelector('.menu-overlay');
+      
+      if (menuToggle && nav && overlay) {
+        menuToggle.addEventListener('click', function() {
+          const isOpen = nav.classList.toggle('open');
+          overlay.classList.toggle('active');
+          menuToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Cerrar menú al hacer clic en el overlay
+        overlay.addEventListener('click', function() {
+          nav.classList.remove('open');
+          overlay.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', false);
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        nav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            nav.classList.remove('open');
+            overlay.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', false);
+          });
+        });
+      }
     });
 
   // Footer
