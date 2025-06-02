@@ -1,9 +1,25 @@
 // Aquí van los scripts globales compartidos entre todas las páginas. 
 
+// Detectar la ruta base del sitio
+function getBasePath() {
+  const path = window.location.pathname;
+  // Si estamos en un subdirectorio como /testi3g/, extraer esa parte
+  const segments = path.split('/').filter(segment => segment !== '');
+  if (segments.length > 0 && !segments[segments.length - 1].includes('.html')) {
+    return '/' + segments[0] + '/';
+  } else if (segments.length > 1) {
+    return '/' + segments[0] + '/';
+  }
+  return '/';
+}
+
 // Cargar header.html y marcar el enlace activo
 document.addEventListener('DOMContentLoaded', function() {
+  const basePath = getBasePath();
+  const assetsPath = basePath === '/' ? 'assets/' : 'assets/';
+  
   // Header
-  fetch('assets/header.html')
+  fetch(assetsPath + 'header.html')
     .then(res => res.text())
     .then(html => {
       document.body.insertAdjacentHTML('afterbegin', html);
@@ -115,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
   // Footer
-  fetch('assets/footer.html')
+  fetch(assetsPath + 'footer.html')
     .then(res => res.text())
     .then(html => {
       document.body.insertAdjacentHTML('beforeend', html);
