@@ -1,0 +1,496 @@
+/* Variables CSS - ACTUALIZADA CON PALETA DEL SITIO */
+/* VERSIÓN ACTUALIZADA - DICIEMBRE 2024 - USANDO COLOR CORRECTO DEL SITIO */
+:root {
+  --color-primario: #e63946;
+  --color-primario-hover: #d62828;
+  --color-azul-oscuro: #0d1b2a;
+  --color-azul-medio: #11294d;
+  --color-azul-claro: #003049;
+  --color-texto: #333;
+  --color-texto-claro: #666;
+  --color-fondo-principal: #f4f6fa; /* CORREGIDO: Mismo color que styles.css */
+  --color-fondo-cards: #fff;
+  --color-fondo-alternativo: #f8f9fa;
+  --max-width: 1140px;
+  --border-radius: 4px;
+  --box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Reset específico para la página de entrada */
+html.entrada-plantilla-page {
+  scroll-behavior: smooth;
+}
+
+body.entrada-plantilla-body {
+  overflow-x: hidden;
+  background: var(--color-fondo-principal) !important; /* Usando la paleta del sitio */
+  font-family: 'Ubuntu', Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+main.entrada-plantilla {
+  background: var(--color-fondo-principal) !important; /* Usando la paleta del sitio */
+  min-height: 100vh;
+  padding-top: 0; /* Sin padding superior para evitar sobreposición */
+}
+
+/* HERO SECTION - CORREGIDO */
+.entrada-plantilla .hero-articulo {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Aumentado para mejor visibilidad */
+  margin: 0 0 40px 0; /* CORREGIDO: sin margen superior para eliminar espacio blanco */
+  overflow: hidden;
+  z-index: 1; /* Z-index bajo para que no se sobreponga */
+}
+
+.entrada-plantilla .hero-articulo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.entrada-plantilla .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Aumentado para mejor contraste */
+  z-index: 2;
+}
+
+.entrada-plantilla .hero-contenido {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem; /* Aumentado padding */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  z-index: 3;
+}
+
+.entrada-plantilla .hero-contenido h1 {
+  font-size: 2.5rem; /* Aumentado tamaño */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+.entrada-plantilla .meta-info {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Alineación vertical */
+  flex-wrap: wrap; /* Permite envolvimiento en pantallas pequeñas */
+  gap: 2rem; /* Gap entre elementos */
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.entrada-plantilla .meta-info span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+/* LAYOUT PRINCIPAL - CORREGIDO */
+.entrada-plantilla .contenedor-principal {
+  display: flex;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 2rem; /* Aumentado gap */
+  padding: 2rem 1rem; /* Aumentado padding */
+  background: var(--color-fondo-principal) !important; /* Usando la paleta del sitio */
+  position: relative;
+  z-index: 2; /* Z-index mayor que el hero */
+}
+
+/* TABLA DE CONTENIDOS - STICKY CORREGIDO */
+.entrada-plantilla .sidebar-izquierda {
+  width: 250px;
+  flex-shrink: 0;
+  height: fit-content;
+  position: sticky;
+  top: 80px; /* Mismo comportamiento que el sidebar derecho */
+  z-index: 15; /* Z-index más alto que los widgets */
+}
+
+.entrada-plantilla .tabla-contenidos {
+  background: var(--color-fondo-cards) !important; /* Fondo de cards del sitio */
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Aumentado shadow */
+  max-height: calc(100vh - 100px); /* Altura máxima ajustada para el nuevo top */
+  overflow-y: auto;
+  /* Removido position sticky - ahora el contenedor padre es sticky */
+}
+
+.entrada-plantilla .tabla-contenidos h2 {
+  color: var(--color-azul-claro) !important; /* Color principal del sitio */
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-primario); /* Color primario del sitio */
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.entrada-plantilla .tabla-contenidos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.entrada-plantilla .tabla-contenidos li {
+  margin-bottom: 0.5rem;
+}
+
+.entrada-plantilla .tabla-contenidos a {
+  color: var(--color-texto) !important; /* Color de texto del sitio */
+  text-decoration: none;
+  display: block;
+  padding: 0.75rem; /* Aumentado padding */
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent; /* Indicador visual */
+}
+
+.entrada-plantilla .tabla-contenidos a:hover,
+.entrada-plantilla .tabla-contenidos a.active {
+  background-color: var(--color-fondo-alternativo) !important; /* Fondo hover del sitio */
+  color: var(--color-primario) !important; /* Color primario del sitio */
+  font-weight: 500;
+  border-left-color: var(--color-primario); /* Indicador activo */
+  transform: translateX(5px); /* Efecto de movimiento */
+}
+
+/* CONTENIDO PRINCIPAL - CORREGIDO */
+.entrada-plantilla .contenido-principal {
+  flex: 1;
+  min-width: 0;
+  background: var(--color-fondo-cards) !important; /* Fondo de cards del sitio */
+  border-radius: var(--border-radius);
+  padding: 2.5rem; /* Aumentado padding */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Aumentado shadow */
+  position: relative;
+  z-index: 1;
+}
+
+.entrada-plantilla .entrada-imagen {
+  margin-bottom: 2rem;
+}
+
+.entrada-plantilla .entrada-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Añadido shadow */
+}
+
+.entrada-plantilla .entrada-texto {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7; /* Aumentado line-height */
+}
+
+.entrada-plantilla .entrada-texto h2 {
+  color: var(--color-azul-claro) !important; /* Color principal del sitio */
+  margin: 2.5rem 0 1.5rem; /* Aumentado margen */
+  font-size: 1.9rem; /* Aumentado tamaño */
+  font-weight: 600;
+}
+
+.entrada-plantilla .entrada-texto p {
+  margin-bottom: 1.25rem; /* Aumentado margen */
+  color: var(--color-texto) !important; /* Color de texto del sitio */
+  font-size: 1.05rem; /* Ligeramente aumentado */
+}
+
+.entrada-plantilla .entrada-texto strong {
+  color: var(--color-azul-claro) !important; /* Color destacado del sitio */
+  font-weight: 600;
+}
+
+.entrada-plantilla .entrada-texto ul {
+  margin: 1.5rem 0; /* Aumentado margen */
+  padding-left: 1.5rem;
+  color: var(--color-texto) !important; /* Color de texto del sitio */
+}
+
+.entrada-plantilla .entrada-texto li {
+  margin-bottom: 0.75rem; /* Aumentado margen */
+}
+
+.entrada-plantilla blockquote {
+  border-left: 4px solid var(--color-primario); /* Color primario del sitio */
+  padding: 1.5rem; /* Aumentado padding */
+  margin: 2.5rem 0; /* Aumentado margen */
+  background: var(--color-fondo-alternativo) !important; /* Fondo alternativo del sitio */
+  font-style: italic;
+  color: var(--color-texto) !important; /* Color de texto del sitio */
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  position: relative;
+}
+
+.entrada-plantilla blockquote::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--color-primario); /* Color primario del sitio */
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-family: serif;
+}
+
+/* SIDEBAR DERECHA - STICKY INDIVIDUAL CORREGIDO */
+.entrada-plantilla .sidebar-derecha {
+  width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 80px; /* Aumentado para dar espacio al header */
+  z-index: 10;
+}
+
+/* Primer widget - Suscripción */
+.entrada-plantilla .widget.suscripcion {
+  background: var(--color-fondo-cards) !important; /* Fondo de cards del sitio */
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Aumentado shadow */
+  /* Removido position sticky - ahora el contenedor padre es sticky */
+}
+
+/* Segundo widget - Compartir */
+.entrada-plantilla .widget.compartir {
+  background: var(--color-fondo-cards) !important; /* Fondo de cards del sitio */
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Aumentado shadow */
+  /* Removido position sticky - ahora el contenedor padre es sticky */
+}
+
+/* Widget general - para widgets adicionales */
+.entrada-plantilla .widget {
+  background: var(--color-fondo-cards) !important; /* Fondo de cards del sitio */
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Aumentado shadow */
+  /* Sin position sticky por defecto - se aplica individualmente */
+}
+
+.entrada-plantilla .widget h3 {
+  color: var(--color-azul-claro) !important; /* Color principal del sitio */
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-primario); /* Color primario del sitio */
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.entrada-plantilla .widget p {
+  color: var(--color-texto) !important; /* Color de texto del sitio */
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* FORMULARIO */
+.entrada-plantilla .form-suscripcion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Aumentado gap */
+}
+
+.entrada-plantilla .form-suscripcion input {
+  padding: 1rem; /* Aumentado padding */
+  border: 2px solid #e0e0e0; /* Borde más visible */
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  background: var(--color-fondo-cards) !important; /* Fondo de cards del sitio */
+  color: var(--color-texto) !important; /* Color de texto del sitio */
+  transition: border-color 0.3s ease;
+}
+
+.entrada-plantilla .form-suscripcion input:focus {
+  outline: none;
+  border-color: var(--color-primario); /* Color primario del sitio */
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1); /* Color primario con transparencia */
+}
+
+.entrada-plantilla .form-suscripcion button {
+  background: var(--color-primario) !important; /* Color primario del sitio */
+  color: #ffffff !important; /* Color asegurado */
+  border: none;
+  padding: 1rem; /* Aumentado padding */
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600; /* Aumentado peso */
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.entrada-plantilla .form-suscripcion button:hover {
+  background: var(--color-primario-hover) !important; /* Color hover del sitio */
+  transform: translateY(-2px); /* Efecto hover */
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3); /* Color primario con transparencia */
+}
+
+/* BOTONES SOCIALES */
+.entrada-plantilla .social-buttons {
+  display: flex;
+  gap: 1rem; /* Aumentado gap */
+  justify-content: center;
+}
+
+.entrada-plantilla .social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px; /* Aumentado tamaño */
+  height: 45px;
+  border-radius: 50%;
+  color: #ffffff !important; /* Color asegurado */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem; /* Aumentado tamaño icon */
+}
+
+.entrada-plantilla .social-btn:hover {
+  transform: scale(1.15) translateY(-2px); /* Efecto hover mejorado */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.entrada-plantilla .social-btn.twitter { 
+  background: #000000; /* Color negro de X */
+}
+
+.entrada-plantilla .social-btn.linkedin { 
+  background: linear-gradient(135deg, #0077B5, #005885); /* Gradiente */
+}
+
+.entrada-plantilla .social-btn.facebook { 
+  background: linear-gradient(135deg, #4267B2, #2d4373); /* Gradiente */
+}
+
+/* Accesibilidad */
+.entrada-plantilla .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* RESPONSIVE - MEJORADO */
+@media (max-width: 992px) {
+  .entrada-plantilla .contenedor-principal {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .entrada-plantilla .sidebar-izquierda,
+  .entrada-plantilla .sidebar-derecha {
+    width: 100%;
+  }
+  
+  /* Desactivar sticky en móvil para todos los elementos */
+  .entrada-plantilla .tabla-contenidos,
+  .entrada-plantilla .sidebar-derecha {
+    position: static !important; /* Quitar sticky en móvil */
+    top: auto !important;
+  }
+  
+  .entrada-plantilla .contenido-principal {
+    order: -1;
+    padding: 2rem;
+  }
+  
+  .entrada-plantilla .hero-articulo {
+    height: 350px;
+    margin-top: 0; /* CORREGIDO: sin margen superior */
+  }
+}
+
+@media (max-width: 768px) {
+  .entrada-plantilla .hero-articulo {
+    height: 300px;
+    margin-top: 0; /* CORREGIDO: sin margen superior */
+  }
+  
+  .entrada-plantilla .hero-contenido h1 {
+    font-size: 1.8rem;
+  }
+  
+  .entrada-plantilla .meta-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .entrada-plantilla .contenedor-principal {
+    padding: 1rem 0.5rem;
+  }
+  
+  .entrada-plantilla .contenido-principal {
+    padding: 1.5rem;
+  }
+  
+  .entrada-plantilla .entrada-texto h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .entrada-plantilla .hero-articulo {
+    height: 250px;
+    margin-top: 0; /* CORREGIDO: sin margen superior */
+  }
+  
+  .entrada-plantilla .hero-contenido h1 {
+    font-size: 1.4rem;
+  }
+  
+  .entrada-plantilla .contenido-principal {
+    padding: 1rem;
+  }
+  
+  .entrada-plantilla .widget {
+    padding: 1rem;
+  }
+  
+  .entrada-plantilla .social-btn {
+    width: 40px;
+    height: 40px;
+  }
+} 

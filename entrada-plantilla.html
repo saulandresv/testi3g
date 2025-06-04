@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es" class="entrada-plantilla-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO -->
+  <title>Google rompe con dos autoridades de certificados - I3G Ciberseguridad</title>
+  <meta name="description" content="Google dejará de confiar en certificados de Chunghwa Telecom y NetLock. Análisis del impacto en la cadena de confianza digital y acciones recomendadas.">
+  <meta name="keywords" content="certificados digitales, Google Chrome, Chunghwa Telecom, NetLock, ciberseguridad, SSL, TLS">
+  <meta name="author" content="I3G Servicios en Seguridad y Gestión Informática">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Google rompe con dos autoridades de certificados">
+  <meta property="og:description" content="Análisis del impacto en la cadena de confianza digital y acciones recomendadas para empresas.">
+  <meta property="og:image" content="assets/img/logo.png">
+  <meta property="og:url" content="https://saulandresv.github.io/testi3g/entrada-plantilla.html">
+  <meta property="og:type" content="article">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Google rompe con dos autoridades de certificados: advertencia para toda la cadena de confianza digital",
+    "author": {
+      "@type": "Organization",
+      "name": "I3G Servicios en Seguridad y Gestión Informática"
+    },
+    "datePublished": "2025-06-04",
+    "publisher": {
+      "@type": "Organization",
+      "name": "I3G Ciberseguridad",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "assets/img/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://saulandresv.github.io/testi3g/entrada-plantilla.html"
+    }
+  }
+  </script>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="entrada-plantilla/entrada-plantilla.css">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  
+  <!-- CSS optimizado -->
+  <style>
+    html { scroll-behavior: smooth; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  </style>
+</head>
+<body class="entrada-plantilla-body">
+  <!-- El header se carga dinámicamente aquí por global.js -->
+  
+  <main class="entrada-plantilla">
+    <article itemscope itemtype="https://schema.org/BlogPosting">
+      
+      <!-- Hero -->
+      <header class="hero-articulo">
+        <div class="hero-overlay"></div>
+        <div class="hero-contenido">
+          <h1 itemprop="headline">Google rompe con dos autoridades de certificados: advertencia para toda la cadena de confianza digital</h1>
+          <div class="meta-info">
+            <span itemprop="author" itemscope itemtype="https://schema.org/Organization">
+              <i class="fas fa-user" aria-hidden="true"></i>
+              <span itemprop="name">I3G Servicios en Seguridad y Gestión Informática</span>
+            </span>
+            <time itemprop="datePublished" datetime="2025-06-04">
+              <i class="fas fa-calendar" aria-hidden="true"></i>
+              4 de junio, 2025
+            </time>
+            <span>
+              <i class="fas fa-clock" aria-hidden="true"></i>
+              5 min de lectura
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <div class="contenedor-principal">
+        
+        <!-- Tabla de Contenidos -->
+        <nav class="sidebar-izquierda" aria-label="Tabla de contenidos">
+          <div class="tabla-contenidos">
+            <h2>Tabla de Contenidos</h2>
+            <ul>
+              <li><a href="#introduccion">Introducción</a></li>
+              <li><a href="#que-ocurrio">¿Qué ocurrió exactamente?</a></li>
+              <li><a href="#involucrados">¿Quién está involucrado?</a></li>
+              <li><a href="#tecnologia">Tecnología destacada</a></li>
+              <li><a href="#acciones">Acciones inmediatas</a></li>
+              <li><a href="#leccion">Lección del momento</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <section class="contenido-principal">
+          <div class="entrada-texto" itemprop="articleBody">
+            
+            <figure class="entrada-imagen">
+              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop" 
+                   alt="Pantalla mostrando advertencia de conexión no privada por certificados comprometidos"
+                   width="800" 
+                   height="400"
+                   loading="lazy">
+            </figure>
+
+            <h2 id="introduccion">Introducción</h2>
+            <p>La confianza en los certificados digitales es la base del cifrado seguro en internet. Si un navegador como Chrome deja de confiar en una Autoridad Certificadora (CA), los sitios que usen sus certificados comenzarán a generar advertencias críticas de seguridad. Este tipo de decisiones pueden afectar miles de conexiones seguras en todo el mundo.</p>
+
+            <h2 id="que-ocurrio">📌 ¿Qué ocurrió exactamente?</h2>
+            <p>Google anunció que dejará de confiar en los certificados emitidos por <strong>Chunghwa Telecom (Taiwán)</strong> y <strong>NetLock (Hungría)</strong> debido a reiteradas deficiencias en sus prácticas de seguridad y transparencia.</p>
+            
+            <ul>
+              <li>El anuncio fue publicado en mayo y la medida comenzará a aplicarse en una próxima versión de Chrome, aún no especificada.</li>
+              <li>Es una medida global, implementada a través del navegador Chrome.</li>
+            </ul>
+
+            <h2 id="involucrados">¿Quién está involucrado?</h2>
+            <p><strong>Autoridades afectadas:</strong> Chunghwa Telecom y NetLock.</p>
+            <p><strong>Usuarios impactados:</strong> Cualquier persona que visite un sitio web con certificados emitidos por estas entidades.</p>
+            <p><strong>Organizaciones afectadas:</strong> Empresas que utilicen certificados SSL/TLS firmados por estas CA.</p>
+
+            <h2 id="tecnologia">Tecnología destacada</h2>
+            <p>Los certificados digitales permiten cifrar la comunicación entre el navegador y el servidor, validando además la identidad del sitio web. Si una CA falla en sus procesos de verificación o transparencia, se convierte en un eslabón débil.</p>
+            
+            <blockquote>
+              "Chrome actúa como un guardián: al remover la confianza en estas entidades, protege a los usuarios de posibles fraudes o suplantaciones."
+            </blockquote>
+
+            <h2 id="acciones">Acciones inmediatas que puedes tomar</h2>
+            <p><strong>🔍 Revisa los certificados de tus sitios:</strong> Si usas certificados de Chunghwa o NetLock, cámbialos de inmediato por otros emitidos por CAs confiables (ej. DigiCert, Let's Encrypt).</p>
+            
+            <p><strong>🛠️ Audita tu infraestructura:</strong> Asegúrate de que todos los certificados estén correctamente configurados y renovados.</p>
+            
+            <p><strong>📚 Capacita a tu equipo técnico:</strong> Realiza campañas de concientización sobre la gestión de certificados digitales y la importancia de la confianza en la cadena.</p>
+            
+            <p><strong>💻 Solicita un servicio de hacking ético:</strong> Para detectar posibles impactos derivados de una mala configuración de certificados.</p>
+            
+            <p><strong>🎯 Realiza simulaciones de phishing:</strong> Los atacantes podrían aprovechar la confusión para suplantar sitios con advertencias falsas.</p>
+
+            <h2 id="leccion">Lección del momento</h2>
+            <p>Este caso demuestra que incluso actores que operan como Autoridades de Certificación pueden fallar en mantener los estándares de seguridad exigidos. La confianza digital no es eterna: se gana con transparencia, se mantiene con vigilancia constante y puede perderse rápidamente ante una mala gestión.</p>
+            
+            <p>Las empresas que no actualicen su infraestructura a tiempo podrían perder clientes, credibilidad y estar expuestas a ciberataques.</p>
+            
+            <p><strong>No pongas en riesgo la confianza de tus usuarios.</strong> Verifica hoy la validez de tus certificados digitales y refuerza la seguridad de tu infraestructura.</p>
+            
+            <p><em>I3G Ciberseguridad. Protegemos lo que no se ve.</em></p>
+          </div>
+        </section>
+
+        <!-- Widgets Derecha -->
+        <aside class="sidebar-derecha" aria-label="Widgets relacionados">
+          
+          <section class="widget suscripcion">
+            <h3>¿Quieres recibir más contenido?</h3>
+            <p>Suscríbete a nuestra newsletter para recibir las últimas actualizaciones en ciberseguridad.</p>
+            <form class="form-suscripcion" aria-label="Formulario de suscripción">
+              <label for="email-newsletter" class="sr-only">Correo electrónico</label>
+              <input type="email" 
+                     id="email-newsletter"
+                     name="email" 
+                     placeholder="Tu correo electrónico"
+                     required
+                     aria-label="Ingresa tu correo electrónico">
+              <button type="submit">Suscribirse</button>
+            </form>
+          </section>
+          
+          <section class="widget compartir">
+            <h3>Compartir este artículo</h3>
+            <div class="social-buttons" role="group" aria-label="Compartir en redes sociales">
+              <a href="#" class="social-btn twitter" aria-label="Compartir en X">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                </svg>
+                <span class="sr-only">X</span>
+              </a>
+              <a href="#" class="social-btn linkedin" aria-label="Compartir en LinkedIn">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+              <a href="#" class="social-btn facebook" aria-label="Compartir en Facebook">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
+                <span class="sr-only">Facebook</span>
+              </a>
+            </div>
+          </section>
+          
+        </aside>
+      </div>
+    </article>
+  </main>
+  
+  <!-- El footer se carga dinámicamente aquí por global.js -->
+  <script src="assets/js/global.js"></script>
+  <script src="entrada-plantilla/entrada-plantilla.js"></script>
+</body>
+</html> 
